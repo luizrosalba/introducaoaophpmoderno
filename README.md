@@ -85,6 +85,72 @@ phpinfo();
 ![](4.PNG)
 
 
+``` JS
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Formulario</title>
+
+        <meta name= "author" content=""></head>
+        <meta name= "description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+<body>
+    <p>Formulario para inscricao</p>
+    <!-- get envia por query string na barrade endereco -->
+    <!-- http://localhost:89/script.php?nome=21321&idade=12312 -->
+    <form action="script.php" method="post">
+    <p> Seu nome: <input type="text" name="nome" /> </p>
+    <p> Sua idade: <input type="text" name="idade" /> </p>
+    <p><input type="submit"></p>
+    </form>
+</body>
+</html>
+```
+``` Js 
+<?php
+
+// tipagem dinamica igual js 
+$categorias =[];
+$categorias[] = 'infantil';
+$categorias[] = 'adolescente';
+$categorias[] = 'adulto';
+$categorias[] = 'idoso';
+
+// recupera a informaçõa que vem por post 
+$nome = $_POST['nome'];
+$idade = $_POST['idade']; 
+
+// $nome = $_GET['nome'];
+// $idade = $_GET['idade']; 
+
+
+//  var_dump($nome);
+//  var_dump($idade);
+
+if($idade>=6 && $idade <=12 )
+{
+    echo 'infantil'; 
+}
+else if ( $idade>=13 && $idade <=18 ) 
+{
+    echo 'adolescente'; 
+}
+else {
+    echo 'adulto'; 
+}
+// for ($i=0; $i < count($categorias) ; $i++) 
+// { 
+//     if($categorias[$i] =='infantil')
+//         echo "O nadador ", $nome , " compete na categoria " ,$categorias[$i]; 
+// }
+?>
+```
+
+
+# Implementando técnicas de validação de dados
+
 
 
 
