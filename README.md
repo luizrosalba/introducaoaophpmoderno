@@ -80,6 +80,9 @@ phpinfo();
 
 ![](3.PNG)
 
+# Verbos HTTP para formularios 
+
+
 
 
 
