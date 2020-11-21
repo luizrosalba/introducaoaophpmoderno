@@ -3,3 +3,4 @@
 .env
 docker-compose.yml
 Makefile
+utils/utils/docker/nginx/nginx.conf

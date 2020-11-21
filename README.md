@@ -80,7 +80,9 @@ phpinfo();
 
 ![](3.PNG)
 
-# Verbos HTTP para formularios 
+# Aprenda na prática como utilizar o método de requisição e resposta na web com PHP
+
+![](4.PNG)
 
 
 
