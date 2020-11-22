@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 // tipagem dinamica igual js 
 $categorias =[];
 $categorias[] = 'infantil';
@@ -20,20 +22,29 @@ $idade = $_POST['idade'];
 
 if (empty($nome))
 {
-    echo 'O nome não pode ser vazio';
-    return;
+    $_SESSION['mensagem de erro'] = "O nome nao pode ser vazio preencha novamente ";
+    header('location:index.php');
 }
 
 if (strlen($nome)<3)
 {
-    echo 'O nome deve conter mais de 3 caracteres';
-    return;
+    $_SESSION['mensagem de erro'] = "O nome deve conter mais de 3 caracteres";
+    header('location:index.php');
+    
 }
 
 if (strlen($nome)>40)
 {
-    echo 'O nome deve ser menor de 40 caracteres';
-    return;
+    $_SESSION['mensagem de erro'] = " nome deve ser menor de 40 caracteres";
+    header('location:index.php');
+    
+}
+
+if (!is_numeric($idade))
+{ 
+    $_SESSION['mensagem de erro'] = " A idade deve ser um numero";
+    header('location:index.php');
+    
 }
 
 if($idade>=6 && $idade <=12 )

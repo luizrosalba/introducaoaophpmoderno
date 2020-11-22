@@ -149,7 +149,6 @@ else {
 ```
 
 
-# Implementando técnicas de validação de dados
 
 
 
