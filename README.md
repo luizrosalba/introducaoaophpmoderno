@@ -232,7 +232,38 @@ header ('location:index.php')
 
 - Classe Exception 
 - Capturando exceções try-catch finally
-
+- message, code, file, line
 ![](7.PNG)
 
 
+# Manipulando BD em PHP 
+
+- PHP funciona com relacionais e nao relacionais 
+
+- mysqli  no manual tem todas os métodos utilizados 
+
+- PDO - PHP DATA OBJECTS 
+- camada de abstração para BD 
+- tanto faz o banco 
+- usando os métodos permanece o mesmo independente do BD 
+
+# CRUD em PDO 
+
+- tive que acertar o connect.php para poder usa-lo com docker : 
+- usei o phpinfo(); para achar meu $_SERVER['REMOTE_ADDR'] que era   172.19.0.1 e adicionei a porta do mysql 
+- $pdo = new PDO('mysql:host=172.19.0.1;port=3306;dbname=exemplo','root', 'glw2e3');
+- http://localhost:89/connect.php
+
+- default-mysql-client 
+
+- ou rodar mysql -h 172.19.0.1 -u root -p exemplo < /application/public/script.sql
+
+http://localhost:89/connect.php
+http://localhost:89/list.php
+http://localhost:89/insert.php?descricao=Produto%20Teste2
+http://localhost:89/update.php?descricao=Produto%20Teste%20Alterado&id=1
+http://localhost:89/delete.php?id=1
+
+# Refatorando para usar uma unica classe 
+
+![](8.PNG)
