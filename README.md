@@ -147,7 +147,36 @@ else {
 // }
 ?>
 ```
+função com retorno bool 
 
+```Js
+function ValidaNome (string $nome) : bool 
+{
+    return true ;
+}
+```
+faz a tipagem ser mais restritiva 
+
+declare ('strict_type-1'); 
+
+controle de erro : @ 
+
+interromper ao encontrar uma falha require ()
+
+Verifica se existe  e está setada isset()
+
+unset elimina o que estiver setado 
+
+- está separando por servicos :
+
+- um para validar os dados 
+- uma para mensagens por sessão 
+- um para categoriacompetidor 
+
+- include "arquivo ou diretorio"
+
+- redireciona para uma nova localidade 
+header ('location:index.php') 
 
 
 

@@ -1,33 +1,40 @@
 <?php
-    /// deve vir antes e inicia a sessao php
-    session_start();
+include "servicos/servicoMensagemSessao.php";
 ?>
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Formulario</title>
+<html>
 
-        <meta name= "author" content=""></head>
-        <meta name= "description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
+<head>
+    <meta charset="utf-8">
+    <title>Formulário de inscrição</title>
+    <meta name="author" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
 <body>
-    <p>Formulario para inscricao</p>
-    <!-- get envia por query string na barrade endereco -->
-    <!-- http://localhost:89/script.php?nome=21321&idade=12312 -->
-    <form action="script.php" method="post">
-    <!-- o codigo deve ter extensao .php para aceitar -->
+
+<p>FORMULÁRIO PARA INSCRIÇÃO DE COMPETIDORES</p>
+
+<form action="script.php" method="post">
     <?php
-    
-        $mensagemDeErro=isset($_SESSION['mensagem de erro'])?$_SESSION['mensagem de erro']:'';
-        if(!empty($mensagemDeErro)){
+        $mensagemDeSucesso = obterMensagemSucesso();
+        if(!empty($mensagemDeSucesso))
+        {
+            echo $mensagemDeSucesso;
+        }
+
+        $mensagemDeErro = obterMensagemErro();
+        if(!empty($mensagemDeErro))
+        {
             echo $mensagemDeErro;
         }
     ?>
-    <p> Seu nome: <input type="text" name="nome" /> </p>
-    <p> Sua idade: <input type="text" name="idade" /> </p>
-    <p><input type="submit"></p>
-    </form>
+    <p>Seu nome: <input type="text" name="nome" /></p>
+    <p>Sua idade: <input type="text" name="idade" /></p>
+    <p><input type="submit" value="Enviar dados do competidor"/></p>
+</form>
+
 </body>
+
 </html>
