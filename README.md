@@ -219,10 +219,20 @@ header ('location:index.php')
 
 # Datas e exceções em PHP 
 
-- DeteTime 
+- DateTime 
 - Formatação 
 - Manipulação 
 
 - função date () 
+- ver arquivo dateas.php
 
--
+![](6.PNG)
+
+# Exceções em PHP
+
+- Classe Exception 
+- Capturando exceções try-catch finally
+
+![](7.PNG)
+
+
