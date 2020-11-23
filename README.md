@@ -182,3 +182,47 @@ header ('location:index.php')
 
 
 
+# Orientações a objetos, exceções e banco de dados PHP 
+
+- Classes 
+- Propriedades 
+- Modificadores de Acesso 
+- Métodos 
+
+
+# Classes 
+
+- Representação de um objeto 
+- Possui métodos e atributos (ou propriedades)
+
+# Visibilidade - Modificadores de acesso 
+- public , private e protected
+- public    - todos acessam 
+- private   - só a classe acessa 
+- protected - a classe e as que herdam acessam 
+
+- Saldo não pode ser public senao qquer um pode modificar , deve ser alterado somente por um metodo deposito ou retirada
+
+# Métodos 
+
+- Açoes para uma classe e conceito de método construtor 
+
+- construtor - executado quando criamos uma instancia da classe 
+
+- 1 arquivo por classe (instancia nao deve ficar no mesmo arquivo )
+
+![](5.PNG)
+
+- php vem ficando cada vez mais tipado 
+
+- declare(strict_types=1);
+
+# Datas e exceções em PHP 
+
+- DeteTime 
+- Formatação 
+- Manipulação 
+
+- função date () 
+
+-
