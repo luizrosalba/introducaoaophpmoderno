@@ -371,3 +371,49 @@ class SearchTest extends TestCase{
 - vendor/bin/phpunit tests/ --colors=always --testdox-text=report-tests.txt --coverage-html=_report --whitelist=src/
 
 
+# PSR 
+
+- PSR são padrões de código que existem para facilitar a interoperabilidade das bibliotecas, frameworks , etc... 
+
+- como organizar namespaces , diretórios , nome classe = nome arquivo , etc 
+
+- www.php-fig.org
+
+- as psr são numeradas de 0 - 19 mas nem todas são usadas 
+- o ideal é seguir todas as marcadas como Accepted 
+- psr 4 padrões de autoload
+- psr 12 estilo de código 
+- temos um utilitário que auxilia a colocar nosso codigo no psr 12 : github.com/squizlabs/PHP_CodeSniffers
+- composer global require "squizlabs/php_cidesbuffer=*"   fica disponivel para todo o sistema operacional 
+- só esse deu certo pra mim no container : composer require --dev squizlabs/php_codesniffer
+- checando : 
+- vendor/bin/phpcs src/ --standard=PSR12
+- vendor/bin/phpcs public_cadastro/ --standard=PSR12
+- vendor/bin/phpcbf public_cadastro/ --standard=PSR12   arruma tudo que for possível 
+
+- http://br.phptherightway.com
+
+# Frameworks 
+
+- estrutura base bem definida que deve ser seguida pelo desenvolvedor 
+- utilização de rotas , sessões , criptografias : 
+
+controller - logica da aplicação 
+models - regra de negocio , tabelas , como escreve no banco 
+view - dados retornados ao usuario (html , js , css ... )
+
+- laravel 
+- symfony 
+- zend framework 
+- codeigniter 
+- cakephp
+
+# microframeworks 
+
+- possuem menos recursos , pesam menos , são mais objetivos e utilizados para tarefa específicas 
+
+- uso mais comum é desenvolvimento de api rest 
+- separe a api rest do sistema principal 
+- evite aplicaç~eos monoliticas e gargalos 
+- famosos : lumen , slim , silex 
+- gerenciador de template : blade 

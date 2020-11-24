@@ -19,16 +19,14 @@ include "servicos/servicoMensagemSessao.php";
 <form action="script.php" method="post">
     <?php
         $mensagemDeSucesso = obterMensagemSucesso();
-        if(!empty($mensagemDeSucesso))
-        {
-            echo $mensagemDeSucesso;
-        }
+    if (!empty($mensagemDeSucesso)) {
+        echo $mensagemDeSucesso;
+    }
 
         $mensagemDeErro = obterMensagemErro();
-        if(!empty($mensagemDeErro))
-        {
-            echo $mensagemDeErro;
-        }
+    if (!empty($mensagemDeErro)) {
+        echo $mensagemDeErro;
+    }
     ?>
     <p>Seu nome: <input type="text" name="nome" /></p>
     <p>Sua idade: <input type="text" name="idade" /></p>
