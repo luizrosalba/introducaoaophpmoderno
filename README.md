@@ -267,3 +267,15 @@ http://localhost:89/delete.php?id=1
 # Refatorando para usar uma unica classe 
 
 ![](8.PNG)
+
+# Desenvolvimento avançado em PHP 
+
+# composer 
+
+- nada de includes e requires desnecessários , utiliza bibliotecas especialists 
+- a instalação do composer é feita usando um arquivo .phar (executavel do php análogo ao jar do java)
+- pode ser colocado no path ou usando como script 
+https://getcomposer.org/download/
+
+
+
