@@ -1,0 +1,16 @@
+{
+    "name": "root/application",
+    "description": "Busca de Cep online",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Luiz",
+            "email": "luizrosalba@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require-dev": {
+        "phpunit/phpunit": "^9"
+    }
+}

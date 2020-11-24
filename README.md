@@ -270,12 +270,104 @@ http://localhost:89/delete.php?id=1
 
 # Desenvolvimento avançado em PHP 
 
-# composer 
+# Trabalkhando com composer  e phpunit 
 
 - nada de includes e requires desnecessários , utiliza bibliotecas especialists 
 - a instalação do composer é feita usando um arquivo .phar (executavel do php análogo ao jar do java)
 - pode ser colocado no path ou usando como script 
-https://getcomposer.org/download/
+```
+    https://getcomposer.org/download/
+    php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+    php -r "if (hash_file('sha384', 'composer-setup.php') === '756890a4488ce9024fc62c56153228907f1545c228516cbf63f885e036d37e9a59d27d63f46af1d4d07ee0f76181c7d3') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+    php composer-setup.php
+    php -r "unlink('composer-setup.php');"
+```
+mv composer.phar /usr/local/bin/composer
 
+- vamos desenvolver uma biblioteca para consulta de cep 
+
+- composer init (para criar o pacote)
+- nome da empresa ou do pacote 
+- stable 
+- biblioteca : consumida por outros projetos 
+- projeto : framework ex: pacote  
+- metapacote (pacote que nao tem codigo php  reune uma lista de dependecias )
+- composer-plugin : plugin do composer 
+- podemos submeter nosso package para o packagist , basta entrar no site logado criar uma tag para seu pacote no git e mandar para o packagist que ele estará disponível para a comunidade 
+
+
+# PHP Unit 
+
+- testes unitários em php 
+
+- TDD primeiro monta o cenário e depois faz a codificação (isso é TDD) vc cria a  função após criar o teste 
+
+- podemos gerar um relatório no code covered 
+
+- pelo menos 90% de cobertura com testes 
+
+- https://phpunit.de/ 
+
+- composer require --dev phpunit/phpunit ^9
+
+- ./vendor/bin/phpunit --version
+
+- criou uma pasta testes 
+- criou um arqivo SearchTest.php 
+
+```Js
+<?php 
+
+use PHPUnit\Framework\TestCase;
+use pastasprojeto\Search
+
+class SearchTest extends TestCase{
+    /**
+    * @dataProvider dadosTeste
+    */ 
+    public function testgetAddressFromZipCodeDefaultUsage(string $input, array $esperado){
+        $resultado = new Search; 
+        $resultado = $resultado-> getAddressFromZipCode($input);
+        $this->assertsEquals($esperado,$resultado); 
+    }
+    public function dadosTeste() {
+    return [
+        "endereço 1 "=> [
+            "010011000", 
+            [
+                "dado"=> "chave",
+                "dado"=> "chave",
+                "dado"=> "chave",
+                "dado"=> "chave",
+                "dado"=> "chave"
+            ]
+        ],
+        "endereço 2"=> [
+            "010011000", 
+            [
+                "dado"=> "chave",
+                "dado"=> "chave",
+                "dado"=> "chave",
+                "dado"=> "chave",
+                "dado"=> "chave"
+            ]
+        ]
+
+    ]
+    }
+}   
+
+?>
+
+```
+
+- vendor/bin/phpunit tests/ --colors=always
+
+- php unit datasourse
+- @dataprovider bom para testar vários cenários 
+- gerando o code coverage 
+- vendor/bin/phpunit tests/ --colors=always --testdox-text=report-tests.txt
+
+- vendor/bin/phpunit tests/ --colors=always --testdox-text=report-tests.txt --coverage-html=_report --whitelist=src/
 
 
